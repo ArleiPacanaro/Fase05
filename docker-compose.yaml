@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: ms-pedidos
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+  mysql:
+    image: mysql:latest
+    container_name: ms-estoque
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: estoque
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+  postgresql:
+    container_name: ms-usuarios
+    image: postgres:9.4
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: dbUsuarios
+    ports:
+      - 5432:5432
+
+volumes:
+  mongodb-data:
+  mysql-data:

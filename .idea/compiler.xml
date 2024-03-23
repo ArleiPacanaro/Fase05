@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ms-estoque" />
+        <module name="ms-seguranca" />
+        <module name="ms-carrinho" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ms-carrinho" target="17" />
+      <module name="ms-estoque" target="17" />
+      <module name="ms-seguranca" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ms-carrinho" options="-parameters" />
+      <module name="ms-estoque" options="-parameters" />
+      <module name="ms-seguranca" options="-parameters" />
+    </option>
+  </component>
+</project>
