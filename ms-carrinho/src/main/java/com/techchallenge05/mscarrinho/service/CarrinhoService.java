@@ -177,11 +177,15 @@ public class CarrinhoService {
 
         // aqui dando erro
 
+
         ResponseEntity<String> response = restTemplate.exchange(
-                "http://localhost:8082/produto/atualizar/estoque/" + produtoID.toString() + "/" + quantidade.toString() ,
+                "http://localhost:8082/produto/atualizar/estoque/{produtoId}/{quantidade}" ,
                 HttpMethod.PUT,
                 entity,
-                String.class
+                String.class,
+                produtoID.toString(),
+                quantidade.toString()
+
         );
     }
 
@@ -220,17 +224,19 @@ public class CarrinhoService {
                         = new ItemCarrinho();
 
 
+
         ResponseEntity<String> response = restTemplate.exchange(
-                "http://localhost:8082/produto/" + Id.toString(),
+                "http://localhost:8082/produto/{produtoId}",
                 HttpMethod.GET,
                 entity,
-                String.class
+                String.class,
+                Id.toString()
 
         );
 
-        if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
+        if (!response.getStatusCode().is2xxSuccessful()) {
             throw new NoSuchElementException("Produto não encontrado");
-        } else if (response.getStatusCode() == HttpStatus.OK) {
+        } else if (response.getStatusCode().is2xxSuccessful() ) {
             try {
                 JsonNode produtoJson = objectMapper.readTree(response.getBody());
 
