@@ -19,9 +19,9 @@ import java.util.List;
 public class ItemCarrinhoRequest {
 
     @NotNull(message="ID do Item deve ser informado")
-    private int id;
+    private Integer id;
     @Positive(message="Quantidade deve ser maior que zero")
     @NotNull(message="Quantidade do Item deve ser informada")
-    private int quantidade;
+    private Integer quantidade;
 
 }

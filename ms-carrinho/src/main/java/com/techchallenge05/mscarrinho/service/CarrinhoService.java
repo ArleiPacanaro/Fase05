@@ -172,11 +172,13 @@ public class CarrinhoService {
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
         Integer produtoID = itemCarrinhoPedido.getId();
-        int quantidade = itemCarrinhoPedido.getQuantidade();
+        Integer quantidade = itemCarrinhoPedido.getQuantidade();
 
+
+        // aqui dando erro
 
         ResponseEntity<String> response = restTemplate.exchange(
-                "http://localhost:8082/produtos/" + produtoID + "/" + quantidade ,
+                "http://localhost:8082/produto/atualizar/estoque/" + produtoID.toString() + "/" + quantidade.toString() ,
                 HttpMethod.PUT,
                 entity,
                 String.class
@@ -219,7 +221,7 @@ public class CarrinhoService {
 
 
         ResponseEntity<String> response = restTemplate.exchange(
-                "http://localhost:8082/produtos/" + Id,
+                "http://localhost:8082/produto/" + Id.toString(),
                 HttpMethod.GET,
                 entity,
                 String.class

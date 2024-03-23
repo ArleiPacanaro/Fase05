@@ -20,5 +20,6 @@ public class ProdutoResponse {
         this.nome       = p.getNome();
         this.descricao  = p.getDescricao();
         this.preco      = p.getPreco();
+        this.quantidade_estoque = p.getQuantidade_estoque();
     }
 }

@@ -34,11 +34,11 @@ public class ProdutoRequest {
     public Produto toProduto(){
 
         return new Produto(
-                id,
-                nome,
-                descricao,
-                quantidade_estoque,
-                preco
+                this.id,
+                this.nome,
+                this.descricao,
+                this.quantidade_estoque,
+                this.preco
         );
 
     }
