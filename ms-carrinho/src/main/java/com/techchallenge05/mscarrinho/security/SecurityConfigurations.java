@@ -22,7 +22,7 @@ public class SecurityConfigurations {
   SecurityFilter securityFilter;
 
   /**
-  * Classe de componnete para permissões.
+  * Metood de componente para permissões.
   */
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
