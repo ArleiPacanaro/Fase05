@@ -8,11 +8,12 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@ComponentScan("com.techchallenge.mscarrinho")
+@ComponentScan("com.techchallenge05.mscarrinho")
 public class AppConfig {
 
     @Bean
     RestTemplate restTemplate() {
+
         RestTemplate restTemplate = new RestTemplate();
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setObjectMapper(new ObjectMapper());
@@ -20,4 +21,5 @@ public class AppConfig {
 
         return restTemplate;
     }
+
 }

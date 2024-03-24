@@ -8,7 +8,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@ComponentScan("com.techchallenge.msestoque")
+@ComponentScan("com.techchallenge05.msestoque")
 public class AppConfig {
 
     @Bean
