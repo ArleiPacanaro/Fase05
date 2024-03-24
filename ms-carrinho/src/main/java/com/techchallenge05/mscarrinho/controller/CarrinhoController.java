@@ -1,7 +1,6 @@
 package com.techchallenge05.mscarrinho.controller;
 
 import com.techchallenge05.mscarrinho.entity.Carrinho;
-import com.techchallenge05.mscarrinho.entity.PagamentoCarrinho;
 import com.techchallenge05.mscarrinho.request.ItemCarrinhoRequest;
 import com.techchallenge05.mscarrinho.service.CarrinhoService;
 import com.techchallenge05.mscarrinho.service.TokenService;
@@ -22,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Controladora de Autenticação.
+ * Controladora de Carrinho.
  */
 @Tag(name = "Carrinho Controller",
         description = "O Controlador de Carrinho expõe APIs REST para Carrinho")
@@ -59,7 +58,7 @@ public class CarrinhoController {
   public ResponseEntity<?> adicionarItemCarrinho(@PathVariable String login,
                                                    @Valid  @RequestBody ItemCarrinhoRequest item) {
     String token = tokenService.getToken();
-    Carrinho carrinho = carrinhoService.AdicionarCarrinho(login, item, token);
+    Carrinho carrinho = carrinhoService.adicionarCarrinho(login, item, token);
     return ResponseEntity.ok(carrinho);
   }
 
@@ -79,20 +78,6 @@ public class CarrinhoController {
     return ResponseEntity.ok(carrinho);
   }
 
-  /**
-  * Realizar pagamento do Carrinho.
-  */
-  @Operation(summary = "Realizar pagamento do Carrinho",
-          description = "Realizar pagamento do Carrinho, passando os dados de pagamento")
-  @PostMapping("/finalizarcompra/{login}")
-  public ResponseEntity<Carrinho> finalizarCarrinho(@PathVariable String login,
-                                                    @RequestBody @Valid
-                                                    PagamentoCarrinho pagamentoCarrinho) {
-    String token = tokenService.getToken();
-    Carrinho carrinhoFinalizado =
-            carrinhoService.efetuandoCompraDoCarrrinho(login, pagamentoCarrinho, token);
-    return ResponseEntity.ok(carrinhoFinalizado);
-  }
 
   /**
   * listar todos os Carrinhos.
@@ -104,7 +89,7 @@ public class CarrinhoController {
   }
 
   /**
-  * listar todos os Carrinhos.
+  * listar  Carrinho por ID.
   */
   @Operation(summary = "listar o Carrinho por ID", description = "listar o Carrinho por ID")
   @GetMapping("/{id}")
@@ -113,7 +98,7 @@ public class CarrinhoController {
   }
 
   /**
-  * llistar o Carrinho por Login.
+  * listar o Carrinho por Login.
   */
   @Operation(summary = "listar o Carrinho por Login", description = "listar o Carrinho por Login")
   @GetMapping("/listarPorlogin/{login}")
