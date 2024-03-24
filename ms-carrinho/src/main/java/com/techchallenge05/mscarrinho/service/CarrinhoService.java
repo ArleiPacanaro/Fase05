@@ -1,52 +1,47 @@
 package com.techchallenge05.mscarrinho.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import com.techchallenge05.mscarrinho.entity.Carrinho;
 import com.techchallenge05.mscarrinho.entity.ItemCarrinho;
 import com.techchallenge05.mscarrinho.entity.PagamentoCarrinho;
 import com.techchallenge05.mscarrinho.repository.CarrinhoRepository;
 import com.techchallenge05.mscarrinho.request.ItemCarrinhoRequest;
-import com.techchallenge05.mscarrinho.response.CarrinhoResponse;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.http.*;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
+import org.springframework.http.*;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
 
 @Service
 @AllArgsConstructor
-
 public class CarrinhoService {
 
-    private CarrinhoRepository carrinhoRepository;
-    private RestTemplate restTemplate;
-    private ObjectMapper objectMapper;
+  private CarrinhoRepository carrinhoRepository;
+  private RestTemplate restTemplate;
+  private ObjectMapper objectMapper;
 
-    public Carrinho criarCarrinho(String login,String authorizationHeader){
+  public Carrinho criarCarrinho(String login,String authorizationHeader){
 
-        Carrinho carrinho = new Carrinho();
-        carrinho.setLoginCliente(login);
-        carrinho.setStatus(true);
-        carrinho.setDataCompra(LocalDateTime.now());
+    Carrinho carrinho = new Carrinho();
+    carrinho.setLoginCliente(login);
+    carrinho.setStatus(true);
+    carrinho.setDataCompra(LocalDateTime.now());
 
-        carrinhoRepository.findByLoginCliente(login,true).ifPresent(carrinhoRepository::delete);
-        return carrinhoRepository.save(carrinho);
+    carrinhoRepository.findByLoginCliente(login,true).ifPresent(carrinhoRepository::delete);
+    return carrinhoRepository.save(carrinho);
 
-    }
+  }
 
-    public Carrinho AdicionarCarrinho(String login, ItemCarrinhoRequest item,String authorizationHeader) {
+  public Carrinho AdicionarCarrinho(String login, ItemCarrinhoRequest item,String authorizationHeader) {
 
-        try {
+     try {
             Carrinho carrinhoAberto = carrinhoRepository.findByLoginCliente(login, true)
                     .orElseThrow();
 
@@ -82,23 +77,21 @@ public class CarrinhoService {
                 throw new NoSuchElementException("Produto não disponível em quantidade suficiente");
             }
 
-            var valorTotal = calcularValorTotal(carrinhoAberto.getItensPedido(),authorizationHeader);
-            carrinhoAberto.setValorTotal(valorTotal);
+        var valorTotal = calcularValorTotal(carrinhoAberto.getItensPedido(),authorizationHeader);
+        carrinhoAberto.setValorTotal(valorTotal);
 
-            Carrinho carrinhoGravado = carrinhoRepository.save(carrinhoAberto);
-            return carrinhoGravado ;
-        }
-        catch (Exception e){
+        Carrinho carrinhoGravado = carrinhoRepository.save(carrinhoAberto);
+        return carrinhoGravado ;
+      }
+      catch (Exception e){
 
-            throw new NoSuchElementException(e.getMessage());
-        }
-
-
+        throw new NoSuchElementException(e.getMessage());
+     }
 
     }
 
 
-    public Carrinho removerItemCarrinho(String login, Integer idProduto,String authorizationHeader) {
+  public Carrinho removerItemCarrinho(String login, Integer idProduto,String authorizationHeader) {
 
 
 
@@ -132,7 +125,7 @@ public class CarrinhoService {
         return carrinhoGravado ;
     }
 
-    public Carrinho efetuandoCompraDoCarrrinho(String login, PagamentoCarrinho pagamentoCarrinho,String authorizationHeader) {
+  public Carrinho efetuandoCompraDoCarrrinho(String login, PagamentoCarrinho pagamentoCarrinho,String authorizationHeader) {
 
         Carrinho carrinhoAberto = carrinhoRepository.findByLoginCliente(login, true)
                 .orElseThrow();
@@ -248,10 +241,7 @@ public class CarrinhoService {
                 e.getMessage();
             }
         }
-
         return itemCarrinho;
     }
-
-
 
 }

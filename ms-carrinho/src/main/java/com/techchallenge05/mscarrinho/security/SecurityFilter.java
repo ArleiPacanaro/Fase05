@@ -3,7 +3,7 @@ package com.techchallenge05.mscarrinho.security;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.techchallenge05.mscarrinho.service.TokenService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -25,17 +25,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * Classe de componente que Intercepta as resquisições e faz o tratamento e validação do Token.
+ */
 @Component
+@RequiredArgsConstructor
 public class SecurityFilter extends OncePerRequestFilter {
 
-  @Autowired
+
   TokenService tokenService;
-
-  @Autowired
   private RestTemplate restTemplate;
-
-  @Autowired
   private ObjectMapper objectMapper;
 
   @Override
@@ -98,9 +97,7 @@ public class SecurityFilter extends OncePerRequestFilter {
                     return authHeader.replace("Bearer ", "");
 
             }
-
-
-    }
+}
 
 
 
