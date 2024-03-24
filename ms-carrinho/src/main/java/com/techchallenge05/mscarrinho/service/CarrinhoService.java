@@ -30,7 +30,7 @@ public class CarrinhoService {
   private ObjectMapper objectMapper;
 
   /**
-  * Metodo service para cria o carrinho.
+  * Metodo service para criar o carrinho.
   */
   public Carrinho criarCarrinho(String login, String authorizationHeader) {
 
@@ -47,7 +47,7 @@ public class CarrinhoService {
   /**
   * Metodo service para adicionar produto ao carrinho.
   */
-  public Carrinho AdicionarCarrinho(String login,
+  public Carrinho adicionarCarrinho(String login,
                                     ItemCarrinhoRequest item, String authorizationHeader) {
 
     try {
@@ -63,7 +63,7 @@ public class CarrinhoService {
       var disponilidade = verificarDisponibilidadeProdutos(item,  authorizationHeader);
       if (disponilidade == true) {
         ItemCarrinho itemCarrinho
-                                = RecuperaItem(item, authorizationHeader);
+                                = recuperaItem(item, authorizationHeader);
 
         itemCarrinho.setQuantidade(item.getQuantidade());
 
@@ -124,25 +124,7 @@ public class CarrinhoService {
     return carrinhoGravado;
   }
 
-  /**
-  * Metodo service para remover produto ao carrinho.
-  */
-  public Carrinho efetuandoCompraDoCarrrinho(String login,
-                                             PagamentoCarrinho pagamentoCarrinho,
-                                             String authorizationHeader) {
 
-    Carrinho carrinhoAberto = carrinhoRepository.findByLoginCliente(login, true)
-                .orElseThrow();
-
-    if (carrinhoAberto == null) {
-      throw new NoSuchElementException("Carrinho não existe");
-    }
-    carrinhoAberto.setDataCompra(LocalDateTime.now());
-    carrinhoAberto.setStatus(false);
-    carrinhoAberto.setPagamento(pagamentoCarrinho);
-    return carrinhoRepository.save(carrinhoAberto);
-
-  }
 
   public List<Carrinho> listarCarrinhos() {
     return carrinhoRepository.findAll();
@@ -166,7 +148,7 @@ public class CarrinhoService {
                                                    String authorizationHeader) {
 
     ItemCarrinho  itemCarrinho =
-                    RecuperaItem(itemCarrinhoPedido, authorizationHeader);
+                    recuperaItem(itemCarrinhoPedido, authorizationHeader);
 
     if (itemCarrinho.getQuantidade() < itemCarrinhoPedido.getQuantidade()) {
       return false; // Produto não disponível em quantidade suficiente
@@ -217,9 +199,9 @@ public class CarrinhoService {
 
 
   /**
-  * Metodo service para recuoerar produto do estoque.
+  * Metodo service para recuperar produto do estoque.
   */
-  private ItemCarrinho RecuperaItem(ItemCarrinhoRequest itemCarrinhoPedido,
+  private ItemCarrinho recuperaItem(ItemCarrinhoRequest itemCarrinhoPedido,
                                     String authorizationHeader) {
 
 

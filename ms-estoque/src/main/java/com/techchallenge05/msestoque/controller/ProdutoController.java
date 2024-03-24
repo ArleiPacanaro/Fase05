@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Controladora de Autenticação.
+ * Controladora de Estoque-produto.
  */
 @Tag(name = "Estoque Controller",
         description = "O Controlador de estoque-produtos expõe APIs REST para estoque-produtos")
