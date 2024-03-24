@@ -5,6 +5,7 @@ import com.techchallenge05.mscarrinho.entity.ItemCarrinho;
 import com.techchallenge05.mscarrinho.entity.PagamentoCarrinho;
 import com.techchallenge05.mscarrinho.request.ItemCarrinhoRequest;
 import com.techchallenge05.mscarrinho.service.CarrinhoService;
+import com.techchallenge05.mscarrinho.service.TokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +21,15 @@ import java.util.NoSuchElementException;
 public class CarrinhoController {
 
     private CarrinhoService carrinhoService;
+    private TokenService tokenService;
+
+
 
     @PostMapping
-    public ResponseEntity<String> criarCarrinho(@RequestHeader(value = "Authorization") String authorizationHeader,
-                                                  @RequestParam String login
-                                                  ) {
+    public ResponseEntity<String> criarCarrinho(@RequestParam String login) {
 
-        Carrinho carrinhocriado = carrinhoService.criarCarrinho(login,authorizationHeader);
+        String token = tokenService.getToken();
+        Carrinho carrinhocriado = carrinhoService.criarCarrinho(login,token);
         return  ResponseEntity.ok("Id do Carrinho : " + carrinhocriado.getId());
 
     }
@@ -34,31 +37,31 @@ public class CarrinhoController {
 
     @PostMapping("/adicionarproduto/{login}")
     public ResponseEntity<Carrinho> adicionarItemCarrinho(@PathVariable String login,
-                                                          @RequestHeader(value = "Authorization") String authorizationHeader,
                                                           @RequestBody ItemCarrinhoRequest item) {
-        return ResponseEntity.ok(carrinhoService.AdicionarCarrinho(login,item,authorizationHeader));
+        String token = tokenService.getToken();
+        return ResponseEntity.ok(carrinhoService.AdicionarCarrinho(login,item,token));
     }
 
 
     @DeleteMapping("/removerproduto/{login}")
     public ResponseEntity<Carrinho> removerItemCarrinho(
             @PathVariable String login,
-            @RequestHeader(value = "Authorization") String authorizationHeader,
-            @RequestBody Integer idProduto
+           @RequestBody Integer idProduto
     )
     {
 
-        Carrinho carrinho = carrinhoService.removerItemCarrinho(login,idProduto,authorizationHeader);
+        String token = tokenService.getToken();
+        Carrinho carrinho = carrinhoService.removerItemCarrinho(login,idProduto,token);
         return ResponseEntity.ok(carrinho);
     }
 
 
     @PostMapping("/finalizarcompra/{login}")
     public ResponseEntity<Carrinho> finalizarCarrinho(@PathVariable String login,
-                                                      @RequestHeader(value = "Authorization") String authorizationHeader,
                                                       @RequestBody PagamentoCarrinho pagamentoCarrinho) {
 
-        Carrinho carrinhoFinalizado = carrinhoService.efetuandoCompraDoCarrrinho(login,pagamentoCarrinho,authorizationHeader);
+        String token = tokenService.getToken();
+        Carrinho carrinhoFinalizado = carrinhoService.efetuandoCompraDoCarrrinho(login,pagamentoCarrinho,token);
         return ResponseEntity.ok(carrinhoFinalizado);
     }
 

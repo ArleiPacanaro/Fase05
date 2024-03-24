@@ -168,8 +168,10 @@ public class CarrinhoService {
     private void atualizarEstoqueProdutos(ItemCarrinho itemCarrinhoPedido,String authorizationHeader) {
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationHeader);
+        headers.setBearerAuth(authorizationHeader);
         HttpEntity<String> entity = new HttpEntity<>(headers);
+
+
 
         Integer produtoID = itemCarrinhoPedido.getId();
         Integer quantidade = itemCarrinhoPedido.getQuantidade();
@@ -212,7 +214,7 @@ public class CarrinhoService {
 
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", authorizationHeader);
+        headers.setBearerAuth(authorizationHeader);
         HttpEntity<String> entity = new HttpEntity<>(headers);
 
 

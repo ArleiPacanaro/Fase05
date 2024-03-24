@@ -46,6 +46,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
    final String AUTH_URL = "http://localhost:8081/auth/validate";
 
+
    final RestTemplate restTemplate = new RestTemplate();
 
 
@@ -54,6 +55,8 @@ public class SecurityFilter extends OncePerRequestFilter {
       HttpHeaders headers = new HttpHeaders();
       headers.setBearerAuth(token);
       HttpEntity<Void> entity = new HttpEntity<>(headers);
+
+      tokenService.setToken(token);
 
       try {
            ResponseEntity<Void> authResponse = restTemplate.exchange(AUTH_URL, HttpMethod.GET, entity, Void.class);
