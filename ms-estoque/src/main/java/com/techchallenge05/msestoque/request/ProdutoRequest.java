@@ -25,7 +25,7 @@ public class ProdutoRequest {
   private String nome;
   @NotBlank(message = "Campo Descricao Obrigatorio")
   private String descricao;
-  @NotBlank(message = "Campo Quantidade Obrigatorio")
+  @NotNull(message = "Campo Quantidade Obrigatorio")
   @PositiveOrZero(message = "Campo deve igual ou maior que zero")
   private int quantidade_estoque;
   @PositiveOrZero(message = "Campo deve igual ou maior que zero")

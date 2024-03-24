@@ -1,0 +1,407 @@
+{
+	"info": {
+		"_postman_id": "38d1fbe8-dba2-4b41-9eab-eaf81da761d2",
+		"name": "Tech Challenge 5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19501342"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Autenticar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"teste23\",\r\n    \"password\":\"teste23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validar Token e Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/auth/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Criar Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"teste23\",\r\n  \"password\": \"teste23\",\r\n  \"cpf\": \"46181856005\",\r\n  \"email\": \"teste3@hotmail.com\",\r\n  \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Usuario Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"login\": \"teste2\",\r\n  \"password\": \"teste2\",\r\n  \"cpf\": \"47620253050\",\r\n  \"email\": \"teste@hotmail.com\",\r\n  \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuários",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Usuários ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlIiwiZXhwIjoxNzExMzEyMDY4fQ.Ojl7uy_DOmy3cpmgi5NkiJ3JZbh7LN2GiTm_-zWHeHY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/users/a3c35868-9a63-4c31-aed5-ab59a6de80ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"users",
+								"a3c35868-9a63-4c31-aed5-ab59a6de80ef"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Criar Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"22\",\r\n    \"nome\": \"TV 75\",\r\n    \"descricao\": \"TV LG 75 polegadas\",\r\n    \"quantidade_estoque\": \"10\",\r\n    \"preco\": \"4115.99\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Produtos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/produto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Produtos ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/produto/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"produto",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/produto/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"produto",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Estoque de Produtos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"22\",\r\n    \"nome\": \"TV 75\",\r\n    \"descricao\": \"TV LG 75 polegadas\",\r\n    \"quantidade_estoque\": \"102\",\r\n    \"preco\": \"4115.99\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/produto/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"produto",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Saida do Estoque",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"22\",\r\n    \"nome\": \"TV 75\",\r\n    \"descricao\": \"TV LG 75 polegadas\",\r\n    \"quantidade_estoque\": \"102\",\r\n    \"preco\": \"4115.99\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/produto/atualizar/estoque/22/50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"produto",
+								"atualizar",
+								"estoque",
+								"22",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
