@@ -12,11 +12,6 @@
         <module name="ms-carrinho" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ms-carrinho" target="17" />
-      <module name="ms-estoque" target="17" />
-      <module name="ms-seguranca" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

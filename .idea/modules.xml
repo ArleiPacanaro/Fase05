@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ms-carrinho/ms-carrinho.iml" filepath="$PROJECT_DIR$/ms-carrinho/ms-carrinho.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ms-estoque/ms-estoque.iml" filepath="$PROJECT_DIR$/ms-estoque/ms-estoque.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ms-seguranca/ms-seguranca.iml" filepath="$PROJECT_DIR$/ms-seguranca/ms-seguranca.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/novoTech.iml" filepath="$PROJECT_DIR$/.idea/novoTech.iml" />
     </modules>
   </component>
