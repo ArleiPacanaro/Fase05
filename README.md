@@ -1,57 +1,61 @@
-GIT: https://github.com/ArleiPacanaro/TechChallenge05
+# Sistema de E-Commerce com Microserviços
 
-Data 25.03
+## Visão Geral
 
-Pendências\ Dúvidas \ Sugestões :
+Este sistema de e-commerce foi desenvolvido para permitir que os usuários realizem cadastro, login, gerenciem itens e mantenham um carrinho de compras, além de simular o processo de checkout. O sistema é baseado no framework Spring Boot, utiliza Spring Security para autenticação e autorização, e é construído seguindo a arquitetura de microserviços, garantindo segurança e escalabilidade.
 
-	Acredito que tenho 70-75% desenvolvido, mas minha maquina não esta permitindo seguir com os testes
+## Arquitetura de Microserviços
 
-	1) Login e Registro de usuário, usando Spring Security para autenticação e autorização.
-	ms-segurança
-		1.1) Esta funcionando, tenho dúvidas se seria interessante colocar, cpf e email no cadastro de usuários.
-                1.2) Talvez tirar o endpoint que lista todos usuários, senão ajustar para consulta a service ao inves da repository
-                1.3) acham interessante termos o delete e update de usuários?
-                1.4) Mudar de Statelles para If_required?
+O sistema é composto por vários microserviços, cada um responsável por um conjunto de funções relacionadas:
 
-	2) Gestao de produtos
-	ms-estoque
-		2.1) Não sei se a arquitetura da segurança é a adequada, nunca fiz, no caso validamos o token 2 vezes, uma com uma service interna e
-                     outra chamando a API de segurança que traz os Roles
+* **MS-Segurança**: Gerencia o registro de usuários e a autenticação/autorização.
+* **MS-Estoque**: Responsável pela gestão de itens e seus preços.
+* **MS-Carrinho**: Permite aos usuários adicionar e remover itens do carrinho de compras, mantendo o estado do carrinho persistente e associado ao usuário.
 
-	3) Carrinho e Pagamento 
-		3.1) Não fiz a parte de pagamento que simula um cartão: Enum das BANDEIRAS... e Entidade dos atributos de Cartão
-		 ** Professor colocou no grupo que não precisa mais da tela
-                 Podemos usar no micrssoerviços, senão ficaram 4, pensei em ficar junto com o Carrinho, o que acham?
-		3.2) Mal consegui testar da timeout do banco
-		3.3) Não usei os DTOs - Controller e Service, refatorar neste ponto.
-                3.4) Persistir nome do usuário no carrinho
+Cada microserviço interage com seu próprio banco de dados para garantir a independência e a eficiência na gestão dos dados.
+![Texto alternativo](doc/img/system.jpeg)
 
+## Requisitos Técnicos
 
-Geral:
-	1) Swaggwer
-	2) Melhorar tratamento das exceptions
-	3) Log
-	4) Documentação
-	** Testes não pediram.
+* Framework: Spring Boot.
+* Segurança: Spring Security.
+* Arquitetura: Microserviços.
+* Banco de Dados: Independente para cada microserviço (Postgres, MySQL, Mongo).
+* Documentação: Instruções de instalação e uso.
 
+## Funcionalidades
 
-Requisitos:
+### Login e Registro de Usuário
 
-	1) Login e Registro de usuário, usando Spring Security para autenticação e autorização.
+* Registro de usuários com validação de dados.
+* Autenticação e autorização com Spring Security.
 
-	2) Gestão de Itens, Os usuários administradores, terão acesso a uma tela de gestão de itens, basicamente o controle de cadastros
-        e manutenção de itens, bem como seus preços.
+### Gestão de Itens
 
-	3) Carrinho de Compras,os usuários podem adicionar e remover itens do carrinho de compras , o carrinho deve ser persistente e associado ao usuario logado
+* Tela de administração para gestão de itens.
+* CRUD de produtos no MS-Estoque.
+* Atualização de estoque após compras.
 
-	4) Pagamentos (simulação) implementar uma tela que simule o processo de pagamento , onde os usuários possam visualizar os itens do carrinho e concluir a compra
-        
+### Carrinho de Compras e Pagamento
 
-Técnicos
-	utilizar os conceitos de microsserviços para cada funcionalidade acima
+* Adição e remoção de itens do carrinho.
+* Persistência do estado do carrinho.
+* Simulação do processo de pagamento.
 
-	sistema deve lidar com as sessões de usuários
+## Instruções de Instalação e Uso
 
-	implementar as validações necessárias para garantir a segurança e integridade dos dados
+// TODO : DO this part
 
-	garanta a segurança dos endpoints dos microserviços usando Spring Security
+## Endpoints
+
+// TODO : DO this part
+
+## Membros do time 
+
+### Grupo 29:
+
+* William Kaminski - RM 430025
+* Diogo Henrique Valente - RM 348497
+* Igor Pereira Rocha Oliveira - RM 349895
+* Arlei Pacanaro Lepiani - RM 350113
+* Matheus Sena - RM 348505
