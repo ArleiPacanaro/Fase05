@@ -9,38 +9,39 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 
-
+/**
+ * DTO para cadastro de Produtos.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProdutoRequest {
 
-    @NotNull(message="Campo ID Obrigatorio")
-    private Integer id;
-    @NotBlank(message = "Campo Nome Obrigatorio")
-    private String nome;
-    @NotBlank(message = "Campo Descricao Obrigatorio")
-    private String descricao;
-    @NotBlank(message = "Campo Quantidade Obrigatorio")
-    @PositiveOrZero(message = "Campo deve igual ou maior que zero" )
-    private int quantidade_estoque;
-    @PositiveOrZero(message = "Campo deve igual ou maior que zero" )
-    private double preco;
+  @NotNull(message = "Campo ID Obrigatorio")
+  private Integer id;
+  @NotBlank(message = "Campo Nome Obrigatorio")
+  private String nome;
+  @NotBlank(message = "Campo Descricao Obrigatorio")
+  private String descricao;
+  @NotBlank(message = "Campo Quantidade Obrigatorio")
+  @PositiveOrZero(message = "Campo deve igual ou maior que zero")
+  private int quantidade_estoque;
+  @PositiveOrZero(message = "Campo deve igual ou maior que zero")
+  private double preco;
 
-
-    public Produto toProduto(){
-
-        return new Produto(
+  /**
+   * Metodo para retornar objeto, fanzendo o Mapper.
+   */
+  public Produto toProduto() {
+    return new Produto(
                 this.id,
                 this.nome,
                 this.descricao,
                 this.quantidade_estoque,
                 this.preco
-        );
-
-    }
+    );
+  }
 
 }

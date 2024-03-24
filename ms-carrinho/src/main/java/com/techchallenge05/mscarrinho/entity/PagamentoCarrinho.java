@@ -6,14 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Entidade para dto pagamento carrinho.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class PagamentoCarrinho {
 
-    private String Cartao;
-    private String Validade;
-    private String Bandeira;
-    private Integer QtdParcelas;
+  private String cartao;
+  private String validade;
+  private String bandeira;
+  private Integer qtdParcelas;
 }

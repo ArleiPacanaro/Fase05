@@ -9,6 +9,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Entidade de Produto para ser persistida.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,11 +19,11 @@ import lombok.Setter;
 @Entity
 public class Produto {
 
-    @Id
-    private Integer id;
-    private String nome;
-    private String descricao;
-    private int quantidade_estoque;
-    private double preco;
+  @Id
+  private Integer id;
+  private String nome;
+  private String descricao;
+  private int quantidade_estoque;
+  private double preco;
 
 }
