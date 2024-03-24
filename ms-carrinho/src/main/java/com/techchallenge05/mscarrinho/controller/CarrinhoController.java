@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 
 
 @RestController
-@RequestMapping("/carrinho")
+@RequestMapping("carrinho")
 @AllArgsConstructor
 public class CarrinhoController {
 
@@ -36,10 +36,13 @@ public class CarrinhoController {
 
 
     @PostMapping("/adicionarproduto/{login}")
-    public ResponseEntity<Carrinho> adicionarItemCarrinho(@PathVariable String login,
+    public ResponseEntity<?> adicionarItemCarrinho(@PathVariable String login,
                                                           @RequestBody ItemCarrinhoRequest item) {
         String token = tokenService.getToken();
-        return ResponseEntity.ok(carrinhoService.AdicionarCarrinho(login,item,token));
+        Carrinho carrinho = carrinhoService.AdicionarCarrinho(login,item,token);
+
+
+        return ResponseEntity.ok(carrinho);
     }
 
 
@@ -81,7 +84,7 @@ public class CarrinhoController {
 
     }
 
-    @GetMapping("/login/{login}")
+    @GetMapping("/listarPorlogin/{login}")
     public ResponseEntity<Carrinho> listarCarrinhoPorLogin(String login){
 
         return  ResponseEntity.ok(carrinhoService.listarCarrinhoPorId(login));
