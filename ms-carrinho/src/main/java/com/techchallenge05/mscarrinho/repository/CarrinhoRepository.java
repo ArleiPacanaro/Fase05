@@ -10,6 +10,7 @@ import java.util.Optional;
 public interface CarrinhoRepository extends MongoRepository<Carrinho, String> {
 
    // @Query("{ 'loginCliente' : { $regex: ?0, $options: 'i' } }")
-    @Query("{ $and: [{'loginCliente':{$regex:?0}},{'status':{$eq:?1}}] }")
+    //@Query("{ $and: [{'loginCliente':{$regex:?0}},{'status':{$eq:?1}}] }")
+     @Query("{ 'loginCliente' : { $regex: ?0, $options: 'i' } }")
     Optional<Carrinho> findByLoginCliente(String LoginCliente,boolean status);
 }

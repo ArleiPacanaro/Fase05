@@ -8,6 +8,7 @@ import com.techchallenge05.mscarrinho.entity.ItemCarrinho;
 import com.techchallenge05.mscarrinho.entity.PagamentoCarrinho;
 import com.techchallenge05.mscarrinho.repository.CarrinhoRepository;
 import com.techchallenge05.mscarrinho.request.ItemCarrinhoRequest;
+import com.techchallenge05.mscarrinho.response.CarrinhoResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -54,8 +55,8 @@ public class CarrinhoService {
                 throw new NoSuchElementException("Carrinho não existe");
 
             }
-
-            if(verificarDisponibilidadeProdutos(item,authorizationHeader))
+            var disponilidade = verificarDisponibilidadeProdutos(item,authorizationHeader);
+            if(disponilidade == true)
             {
 
                 ItemCarrinho itemCarrinho
@@ -68,15 +69,18 @@ public class CarrinhoService {
                 throw new NoSuchElementException("Produto não disponível em quantidade suficiente");
             }
 
-            carrinhoAberto.setValorTotal(calcularValorTotal(carrinhoAberto.getItensPedido(),authorizationHeader));
-            return carrinhoRepository.save(carrinhoAberto);
+            var valorTotal = calcularValorTotal(carrinhoAberto.getItensPedido(),authorizationHeader);
+            carrinhoAberto.setValorTotal(valorTotal);
+            System.out.println("valore total " + valorTotal);
+            Carrinho carrinhoGravado = carrinhoRepository.save(carrinhoAberto);
+            return carrinhoGravado ;
         }
         catch (Exception e){
 
-            e.getMessage();
+            throw new NoSuchElementException(e.getMessage());
         }
 
-        return null;
+
 
     }
 
@@ -100,6 +104,7 @@ public class CarrinhoService {
 
         if (itemCarrinhoOptional.isPresent()) {
 
+            System.out.println("chave do carrinho " + carrinhoAberto.getId());
             carrinhoAberto.getItensPedido().remove(itemCarrinhoOptional.get());
             var qtd = itemCarrinhoOptional.get().getQuantidade() * -1;
             itemCarrinhoOptional.get().setQuantidade(qtd);
@@ -185,10 +190,14 @@ public class CarrinhoService {
                 HttpMethod.PUT,
                 entity,
                 String.class,
-                produtoID.toString(),
-                quantidade.toString()
+                produtoID,
+                quantidade
 
         );
+
+        if (!response.getStatusCode().is2xxSuccessful()) {
+            throw new NoSuchElementException("erro ao atualizar estoque");
+        }
     }
 
 
@@ -236,11 +245,15 @@ public class CarrinhoService {
 
         );
 
+        System.out.println(response);
+
         if (!response.getStatusCode().is2xxSuccessful()) {
             throw new NoSuchElementException("Produto não encontrado");
         } else if (response.getStatusCode().is2xxSuccessful() ) {
             try {
                 JsonNode produtoJson = objectMapper.readTree(response.getBody());
+
+                System.out.println("produto Json" + produtoJson);
 
                 itemCarrinho.setId(produtoJson.get("id").asInt());
                 itemCarrinho.setNome(produtoJson.get("nome").asText());
@@ -253,6 +266,8 @@ public class CarrinhoService {
                 e.getMessage();
             }
         }
+
+        System.out.println("itemCarrinho " + itemCarrinho.getQuantidade());
 
         return itemCarrinho;
     }
