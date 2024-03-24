@@ -27,9 +27,7 @@ public class Carrinho {
     private boolean status;
     private PagamentoCarrinho pagamento;
 
-    public void addProduto(ItemCarrinho itemCarrinho) {
-        this.itensPedido.add(itemCarrinho);
-    }
+
 
 
 

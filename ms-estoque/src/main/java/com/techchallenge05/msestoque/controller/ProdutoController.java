@@ -3,6 +3,7 @@ package com.techchallenge05.msestoque.controller;
 import com.techchallenge05.msestoque.request.ProdutoRequest;
 import com.techchallenge05.msestoque.response.ProdutoResponse;
 import com.techchallenge05.msestoque.service.ProdutoService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,12 +27,13 @@ public class ProdutoController {
         return produtoService.listarUmProduto(produtoId);
     }
     @PostMapping
-    public ResponseEntity cadastrarProduto(@RequestBody ProdutoRequest produto) {
+    public ResponseEntity cadastrarProduto( @RequestBody @Valid ProdutoRequest produto) {
         return produtoService.cadastrarProduto(produto);
     }
 
     @PutMapping("/{produtoId}")
-    public ResponseEntity atualizarProduto(@PathVariable Integer produtoId, @RequestBody ProdutoRequest novoProduto) {
+    public ResponseEntity atualizarProduto(@PathVariable Integer produtoId,
+                                            @RequestBody @Valid ProdutoRequest novoProduto) {
 
         return produtoService.atualizarProduto(produtoId, novoProduto);
     }

@@ -15,4 +15,5 @@ public class PagamentoCarrinho {
     private String Cartao;
     private String Validade;
     private String Bandeira;
+    private Integer QtdParcelas;
 }

@@ -6,6 +6,7 @@ import com.techchallenge05.mscarrinho.entity.PagamentoCarrinho;
 import com.techchallenge05.mscarrinho.request.ItemCarrinhoRequest;
 import com.techchallenge05.mscarrinho.service.CarrinhoService;
 import com.techchallenge05.mscarrinho.service.TokenService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +38,7 @@ public class CarrinhoController {
 
     @PostMapping("/adicionarproduto/{login}")
     public ResponseEntity<?> adicionarItemCarrinho(@PathVariable String login,
-                                                          @RequestBody ItemCarrinhoRequest item) {
+                                                   @Valid  @RequestBody ItemCarrinhoRequest item) {
         String token = tokenService.getToken();
         Carrinho carrinho = carrinhoService.AdicionarCarrinho(login,item,token);
 
@@ -49,7 +50,7 @@ public class CarrinhoController {
     @DeleteMapping("/removerproduto/{login}")
     public ResponseEntity<Carrinho> removerItemCarrinho(
             @PathVariable String login,
-           @RequestBody Integer idProduto
+            @RequestBody @Valid  Integer idProduto
     )
     {
 
@@ -61,7 +62,7 @@ public class CarrinhoController {
 
     @PostMapping("/finalizarcompra/{login}")
     public ResponseEntity<Carrinho> finalizarCarrinho(@PathVariable String login,
-                                                      @RequestBody PagamentoCarrinho pagamentoCarrinho) {
+                                                      @RequestBody @Valid PagamentoCarrinho pagamentoCarrinho) {
 
         String token = tokenService.getToken();
         Carrinho carrinhoFinalizado = carrinhoService.efetuandoCompraDoCarrrinho(login,pagamentoCarrinho,token);
