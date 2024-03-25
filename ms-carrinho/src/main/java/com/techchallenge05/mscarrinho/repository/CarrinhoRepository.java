@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.repository.Query;
 public interface CarrinhoRepository extends MongoRepository<Carrinho, String> {
 
 
-  @Query("{ $and: [{ 'loginCliente' : { $regex: ?0, $options: 'i' } ,{'status':{$eq:?1}}] }")
+
+  @Query("{ $and: [ { 'loginCliente': { $regex: ?0, $options: 'i' } }, { 'status': { $eq: ?1 } } ] }")
   Optional<Carrinho> findByLoginCliente(String LoginCliente, boolean status);
 }

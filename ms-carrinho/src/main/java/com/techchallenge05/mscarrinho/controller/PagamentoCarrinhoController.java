@@ -7,6 +7,7 @@ import com.techchallenge05.mscarrinho.service.TokenService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
         description = "O Pagamento Controlador de Carrinho expõe APIs REST para o Pagamento de Carrinho")
 @RestController
 @RequestMapping("carrinho/pagamento")
+@AllArgsConstructor
 public class PagamentoCarrinhoController {
 
   private PagamentoCarrinhoService pagamentoCarrinhoService;
