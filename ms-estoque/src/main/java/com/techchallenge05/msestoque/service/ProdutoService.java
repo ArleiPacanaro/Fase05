@@ -73,7 +73,6 @@ public class ProdutoService {
       return ResponseEntity.badRequest().body("Não foi encontrado produto com o ID informado!");
     }
 
-
     produtoExistente.setNome(produtoRequest.getNome());
     produtoExistente.setDescricao(produtoRequest.getDescricao());
     produtoExistente.setQuantidade_estoque(produtoRequest.getQuantidade_estoque());

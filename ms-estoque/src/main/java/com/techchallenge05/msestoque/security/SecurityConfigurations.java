@@ -12,7 +12,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 
 /**
- * Classe de Configuração para control de acessos.
+ * Classe de Configuração para controle de acessos.
  */
 @Configuration
 @EnableWebSecurity

@@ -19,7 +19,7 @@ public class ProdutoResponse {
   private double preco;
 
   /**
-   * Construtor com parameto da classe entity.
+   * Construtor com parametro da classe entity.
    */
   public ProdutoResponse(Produto p) {
     this.id         = p.getId();

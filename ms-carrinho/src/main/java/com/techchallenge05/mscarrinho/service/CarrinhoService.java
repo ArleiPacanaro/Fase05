@@ -96,8 +96,6 @@ public class CarrinhoService {
   */
   public Carrinho removerItemCarrinho(String login, Integer idProduto, String authorizationHeader) {
 
-
-
     Carrinho carrinhoAberto = carrinhoRepository.findByLoginCliente(login, true)
                 .orElseThrow();
 
@@ -124,8 +122,6 @@ public class CarrinhoService {
     Carrinho carrinhoGravado = carrinhoRepository.save(carrinhoAberto);
     return carrinhoGravado;
   }
-
-
 
   public List<Carrinho> listarCarrinhos() {
     return carrinhoRepository.findAll();

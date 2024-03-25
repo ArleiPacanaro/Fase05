@@ -13,17 +13,16 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AuthenticationService   {
 
-    private final AuthenticationManager authenticationManager;
-    private final TokenService tokenService;
+  private final AuthenticationManager authenticationManager;
+  private final TokenService tokenService;
 
-    public ResponseEntity login(UserAuthRequest data){
+  public ResponseEntity login(UserAuthRequest data){
 
-        var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
-        var auth = this.authenticationManager.authenticate(usernamePassword);
+    var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
+    var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        var token = tokenService.generateToken((User) auth.getPrincipal());
-        return ResponseEntity.ok(new UserResponse(token));
+    var token = tokenService.generateToken((User) auth.getPrincipal());
+    return ResponseEntity.ok(new UserResponse(token));
 
-    }
-
+  }
 }

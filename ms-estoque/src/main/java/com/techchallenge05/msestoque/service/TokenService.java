@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 /**
- * Consitir Token.
+ * Consistir Token.
  */
 @Service
 public class TokenService {
@@ -16,7 +16,7 @@ public class TokenService {
   private String secret;
 
   /**
-  * Consitir Token.
+  * Consistir Token.
   */
   public String validateToken(String token) {
     try {

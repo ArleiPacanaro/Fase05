@@ -18,7 +18,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 /**
- * Entidade de Usuários.
+ * Entidade de Usuários que implementa UserDetails.
  */
 
 @Table(name = "users")

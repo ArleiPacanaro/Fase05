@@ -40,7 +40,7 @@ public class AuthenticationController {
   }
 
   /**
-   * Metodo para validar toker e retornar roles.
+   * Metodo para validar token e retornar roles.
    */
   @Operation(summary = "Validar Token e retornar privilégios",
           description = "Validar Token e retornar privilégios")

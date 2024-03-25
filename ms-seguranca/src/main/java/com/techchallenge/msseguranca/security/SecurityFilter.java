@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
- * Classe de componente que Intercepta as resquisições e faz o tratamento e validação do Token.
+ * Classe de componente que Intercepta as resquisições e faz o tratamento de validação do Token.
  */
 @Component
 @RequiredArgsConstructor

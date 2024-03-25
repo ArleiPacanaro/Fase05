@@ -32,7 +32,7 @@ public class ProdutoRequest {
   private double preco;
 
   /**
-   * Metodo para retornar objeto, fanzendo o Mapper.
+   * Metodo para retornar objeto, fazendo o Mapper.
    */
   public Produto toProduto() {
     return new Produto(
