@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -33,13 +34,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 @Component
 @RequiredArgsConstructor
-@AllArgsConstructor
 public class SecurityFilter extends OncePerRequestFilter {
 
-
-  TokenService tokenService;
-  private RestTemplate restTemplate;
-  private ObjectMapper objectMapper;
+  //@Autowired
+  private final TokenService tokenService;
+  private final RestTemplate restTemplate;
+  private final ObjectMapper objectMapper;
 
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,

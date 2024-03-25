@@ -110,6 +110,7 @@ public class CarrinhoService {
 
     for (int i = 0; i < itemCarrinhos.size(); i++) {
       if (itemCarrinhos.get(i).getId() == idProduto) {
+        itemCarrinhos.get(i).setQuantidade(itemCarrinhos.get(i).getQuantidade() *-1);
         atualizarEstoqueProdutos(itemCarrinhos.get(i), authorizationHeader);
         itemCarrinhos.remove(i);
       }
