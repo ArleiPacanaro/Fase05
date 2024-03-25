@@ -71,7 +71,7 @@ public class CarrinhoController {
   @DeleteMapping("/removerproduto/{login}")
   public ResponseEntity<Carrinho> removerItemCarrinho(
             @PathVariable String login,
-            @RequestBody @Valid  Integer idProduto
+            @RequestBody Integer idProduto
   ) {
     String token = tokenService.getToken();
     Carrinho carrinho = carrinhoService.removerItemCarrinho(login, idProduto, token);
@@ -93,7 +93,7 @@ public class CarrinhoController {
   */
   @Operation(summary = "listar o Carrinho por ID", description = "listar o Carrinho por ID")
   @GetMapping("/{id}")
-  public ResponseEntity<Carrinho> listarCarrinhoPorId(String id) {
+  public ResponseEntity<Carrinho> listarCarrinhoPorId(@PathVariable String id) {
     return  ResponseEntity.ok(carrinhoService.listarCarrinhoPorId(id));
   }
 
@@ -102,7 +102,7 @@ public class CarrinhoController {
   */
   @Operation(summary = "listar o Carrinho por Login", description = "listar o Carrinho por Login")
   @GetMapping("/listarPorlogin/{login}")
-  public ResponseEntity<Carrinho> listarCarrinhoPorLogin(String login) {
+  public ResponseEntity<Carrinho> listarCarrinhoPorLogin(@PathVariable String login) {
     return  ResponseEntity.ok(carrinhoService.listarCarrinhoPorId(login));
   }
 
