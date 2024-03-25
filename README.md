@@ -1,4 +1,3 @@
-
 # Tech Challenge - Sistema de e-commerce - FIAP Arquitetura de Sistemas em Java - 5º Fase
 
 Este sistema de e-commerce foi desenvolvido para permitir que os usuários realizem cadastro, login, gerenciem itens e mantenham um carrinho de compras, além de simular o processo de pagamento.
@@ -53,6 +52,8 @@ Existe também uma validação para que apenas usuários ADMIN possam cadastrar 
 
 ### 3. MS-Carrinho
 **Para utlizar os serviços presente no ms-carrinho já é necessário estar logado no sistema(Possuir um TOKEN valido).**
+
+![Texto alternativo](doc/img/carrinho.png)
 
 Nesse microserviço é possível criar um carrinho para o usuário, adicionar itens neles passando o ID do produto e qual a quantidade desejada. É possível também remover itens do carrinho e finalizar sua compra informados os dados de pagamento.
 
