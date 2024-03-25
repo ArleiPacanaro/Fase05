@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "38d1fbe8-dba2-4b41-9eab-eaf81da761d2",
+		"_postman_id": "5d95904c-614c-4203-b4dc-4d6e9e4fa1f4",
 		"name": "Tech Challenge 5",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19501342"
+		"_exporter_id": "29520919"
 	},
 	"item": [
 		{
@@ -46,7 +46,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
 									"type": "string"
 								}
 							]
@@ -137,7 +137,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
 									"type": "string"
 								}
 							]
@@ -166,7 +166,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlIiwiZXhwIjoxNzExMzEyMDY4fQ.Ojl7uy_DOmy3cpmgi5NkiJ3JZbh7LN2GiTm_-zWHeHY",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
 									"type": "string"
 								}
 							]
@@ -201,7 +201,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTcyMjF9.x5mIQnGWtrEPMBu_AoiZ0QoLEnNXi6EdaQOvzzAFfVk",
 									"type": "string"
 								}
 							]
@@ -210,7 +210,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"22\",\r\n    \"nome\": \"TV 75\",\r\n    \"descricao\": \"TV LG 75 polegadas\",\r\n    \"quantidade_estoque\": \"10\",\r\n    \"preco\": \"4115.99\"\r\n}\r\n",
+							"raw": "{\r\n    \"id\": \"23\",\r\n    \"nome\": \"TV 22\",\r\n    \"descricao\": \"TV LG 22 polegadas\",\r\n    \"quantidade_estoque\": \"102\",\r\n    \"preco\": \"435.99\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -239,7 +239,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
 									"type": "string"
 								}
 							]
@@ -268,7 +268,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzMTQ2Nzd9.8oXOS9PjolZ3e0a3iI5YeRQsieJlglbY2MXnYODIEQo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTc1NTl9.YmtflCTdiJcy7xyWVBSBd-_7IQzSb_JgJPBRx5C3aCY",
 									"type": "string"
 								}
 							]
@@ -396,6 +396,237 @@
 								"estoque",
 								"22",
 								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carrinho",
+			"item": [
+				{
+					"name": "Criar Carrinho",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "login",
+									"value": "teste23",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8083/carrinho",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar Pagamento Carrinho",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cartao\": \"1234567890123456\",\r\n  \"validade\": \"12/26\",\r\n  \"bandeira\": \"VISA\",\r\n  \"qtdParcelas\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/carrinho/pagamento/efetuar/teste23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"carrinho",
+								"pagamento",
+								"efetuar",
+								"teste23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Item Carrinho",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"23\",\r\n    \"quantidade\":23\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/carrinho/adicionarproduto/teste23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"carrinho",
+								"adicionarproduto",
+								"teste23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Item Carrinho",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTk5ODZ9.j9T7fllUu6zHJhkEc_9ZsBObWgp029_AlzBrcAjusew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idProduto\": 12345\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/carrinho/removerproduto/teste23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"carrinho",
+								"removerproduto",
+								"teste23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Carrinho",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8083/carrinho",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"carrinho"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Carrinho por ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTE0MDA3MDZ9.dvIAQeRFRtsfrDRVR0Zy8P74LSlzN46PJbazgAbhgCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/carrinho/6601a535a20a763b23fc5265",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"carrinho",
+								"6601a535a20a763b23fc5265"
 							]
 						}
 					},
