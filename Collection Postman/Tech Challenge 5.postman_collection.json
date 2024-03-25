@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "5d95904c-614c-4203-b4dc-4d6e9e4fa1f4",
+		"_postman_id": "eac5a95d-f07b-47e0-8774-c80248515a9a",
 		"name": "Tech Challenge 5",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29520919"
+		"_exporter_id": "30959640"
 	},
 	"item": [
 		{
@@ -462,7 +462,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"cartao\": \"1234567890123456\",\r\n  \"validade\": \"12/26\",\r\n  \"bandeira\": \"VISA\",\r\n  \"qtdParcelas\": 3\r\n}\r\n",
+							"raw": "{\r\n  \"cartao\": \"1234567890123456\",\r\n  \"validade\": \"12/26\",\r\n  \"bandeira\": \"VISA\",\r\n  \"qtdParcelas\": 3,\r\n  \"nome\":\"Joao Silva\",\r\n  \"cvv\":\"254\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -494,7 +494,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTE0MTk3MDd9.Ta-RMjPFChZdsM_d_4BJydo3X8kWbpiXlghRpnCL-fM",
 									"type": "string"
 								}
 							]
@@ -534,7 +534,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTk5ODZ9.j9T7fllUu6zHJhkEc_9ZsBObWgp029_AlzBrcAjusew",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTE0MTk3MDd9.Ta-RMjPFChZdsM_d_4BJydo3X8kWbpiXlghRpnCL-fM",
 									"type": "string"
 								}
 							]
@@ -543,7 +543,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"idProduto\": 12345\r\n}",
+							"raw": "  1",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -577,7 +577,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTEzOTgwNzR9.8S29YE6QAswDipKVyB1tAlV5SQXNtQ2CfHa-ycdihKo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsb2phLWFwaSIsInN1YiI6InRlc3RlMjMiLCJleHAiOjE3MTE0MTk3MDd9.Ta-RMjPFChZdsM_d_4BJydo3X8kWbpiXlghRpnCL-fM",
 									"type": "string"
 								}
 							]
