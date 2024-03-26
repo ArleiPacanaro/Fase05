@@ -10,9 +10,9 @@ O sistema é baseado no framework Spring Boot, utiliza Spring Security para aute
 - **Rest Template**: Classe utilitária que permite interagir com serviços RESTful a partir de uma aplicação Java usando o Framework Spring, poderiamos ter optado por Feign , WebClient ou Spring Integration, mas por já conhecermos esta classe e pelo prazo da entrega optamos por ela. 
 - **Docker**: Plataforma de software que permite a criação, o envio e a execução de aplicativos em contêineres.
 - **MongoDB**: Banco de dados não relacional utilizado para persistir as informações relacionadas ao carrinho, optamos por ela pela flexibilidade do relacionamento entre as demais entidades que existem dentro do carrinho.
-- **MySQL**: Banco de dados relacional utilizado para armazenar outras informações do sistema, usamos na parte de estoque-produtos e achamo interessante um banco relacional para a garantia de ACID dos dados que sofrem constantes ajustes conformas compras nos carrinhos ocorrem.
-- **Postgres**: Outro banco de dados relacional utilizado para armazenamento SQL e no caso usamos para o cadastro de usuários, com a garantia de ACID e para exemplificarmos bem como podemos deixar com microserviços os bancos de dados também.
-- **Spring Security e JWT**: Bibliotecas responsaveis por efetuar a camada de segurança da aplicação fornecendo a autenticação e autorização dos usuários e geração e validação dos tokens. O ideal e que o Tokens tenham um tempo curto, deixamos um prazo longo de 4 horas para facilitar os testes, mas o ideal que não passem de 15 minutos, conforme explciado nas aulas de Segurança.
+- **MySQL**: Banco de dados relacional utilizado para armazenar outras informações do sistema, usamos na parte de estoque-produtos e achamo interessante um banco relacional para a garantia de ACID dos dados que sofrem constantes ajustes conforme os produtos são adicionados ou removidos dos carrinhos.
+- **Postgres**: Outro banco de dados relacional utilizado para armazenamento SQL e no caso usamos para o cadastro de usuários, com a garantia de ACID e para exemplificarmos bem como podemos separar e desacoplar os bancos de dados adotando a arquitetura de microserviços.
+- **Spring Security e JWT**: Bibliotecas responsaveis por efetuar a camada de segurança da aplicação fornecendo a autenticação e autorização dos usuários e geração e validação dos tokens. O ideal é que o Tokens tenham um tempo curto para expiração ou até mesmo sendo unico para cada transação,porém deixamos um prazo longo de 4 horas para facilitar os testes, mas o ideal que não passem de 15 minutos, conforme explicado nas aulas de Segurança.
   O JWT é composto por três partes: um cabeçalho (header) com informações sobre o tipo de token e algoritmo de criptografia, um payload (carga útil) com as informações do usuário e um tempo de expiração, e uma assinatura digital para garantir a integridade do token.
 - **SonarLint** é um software detector, em tempo real, de códigos fora de padrão – que geram dificuldades de manutenção , bugs e vulnerabilidades. Foi muito importante a sua utilização para termos uma escrita correta e segura, aplicamos em todas as classes do projeto com exceção as de testes.
 - **CheckStyle** é um analisador estático de código para checar se o código fonte está de acordo com as regras de codificação, este software nos ajudou a atendermos os requisitos da utilização de boas práticas em nosso código.
@@ -20,12 +20,12 @@ O sistema é baseado no framework Spring Boot, utiliza Spring Security para aute
   
 ## Arquitetura de Microserviços
 
-A arquitetura de microsserviços refere-se a um estilo de arquitetura para o desenvolvimento de aplicativos. Os microsserviços permitem que um aplicativo grande seja separado em partes independentes menores, com cada parte tendo sua própria responsabilidade, indo de encontro aos conceitos do Solid e permitindo as equipes de desenvolvimento poderem criar e atualizar novos componentes para atender às mudanças nas necessidades empresariais sem interromper a aplicação como um todo.
+A arquitetura de microsserviços refere-se a um estilo de arquitetura para o desenvolvimento de sistemas. Os microsserviços permitem que um aplicativo grande seja separado em partes independentes menores, com cada parte tendo sua própria responsabilidade, indo de encontro aos conceitos do Solid (especial o S) e permitindo as equipes de desenvolvimento poderem criar e atualizar novos componentes para atender às mudanças nas necessidades empresariais sem interromper a aplicação como um todo.
 
 ![Texto alternativo](doc/img/modelagem.png)
 
 Cada microserviço interage com seu próprio banco de dados para garantir a independência e a eficiência na gestão dos dados.
-Em nosso projeto temos, todos os microserviços chamando o de segurança para validação do Token e recuperação dos dados de roles dos usuários, além do microserviço de carrinho que chama o de estoque para consulta de disponibilidade de produtos, recuperar detalhes de produtos e atualizar o estoque seja no adcionar produtos, quanto no remover produtos.
+Em nosso projeto temos, todos os microsserviços chamando o de segurança para validação do Token e recuperação dos dados de roles dos usuários, além do microserviço de carrinho que chama o de estoque para consulta de disponibilidade de produtos, recuperar detalhes de produtos e atualizar o estoque seja no adicionar quanto no remover produtos.
 
 ### Microserviços do Sistema
 
