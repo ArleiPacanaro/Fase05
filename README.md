@@ -257,6 +257,36 @@ Headers **Authorization Bearer {token}**
 ```
 ---
 
+Exemplo de como fica o reterno do carrinho , após pagamento.
+
+```json
+{
+    "id": "6601f961fbe6956e6519f9ff",
+    "loginCliente": "teste23",
+    "itensPedido": [
+        {
+            "id": 2,
+            "nome": "TV 75",
+            "descricao": "TV LG 75 polegadas",
+            "quantidade": 1,
+            "preco": 4115.99
+        }
+    ],
+    "dataCompra": "2024-03-25T19:34:17.8845729",
+    "valorTotal": 4115.99,
+    "status": false,
+    "pagamento": {
+        "cartao": "1234567890123456",
+        "validade": "12/26",
+        "bandeira": "VISA",
+        "nome": "Joao Silva",
+        "cvv": "254",
+        "qtdParcelas": 3
+    }
+}
+```
+---
+
 <h2 align="center"> Como Executar o Projeto</strong> </h2>
 
 Siga as etapas abaixo para executar o projeto em sua máquina local:
