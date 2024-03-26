@@ -235,7 +235,8 @@ Headers **Authorization Bearer {token}**
 ---
 
 **Pagamento do carrinho**
-Após esta ação o status fica false e o carrinho fechado, desta forma abrindo um novo carrinho pelo login, este não será selecionado para adcionar, remover produtos e pagar e não poderá mais sofrer ajustes pelo controle do id do carrinho
+
+Após esta ação o status fica false e o carrinho fechado, desta forma abrindo um novo carrinho pelo login, este não será selecionado para adicionar, remover produtos e pagar e não poderá mais sofrer ajustes. Mas poderá ser aberto um novo carrinho pelo Login com outro ID de carrinho.
 
 Metodo **POST**
 
