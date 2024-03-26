@@ -29,33 +29,206 @@ Cada microserviço interage com seu próprio banco de dados para garantir a inde
 
 **Cadastro de usuários**
 
-![Texto alternativo](doc/img/users.png)
+Metodo **POST**
 
-É possível Cadastrar novos usuários ADMIN ou USER e listar todos ou por ID
+**URL** http://localhost:8081/users
 
-**Login e validação**
+```json
+{
+  "login": "teste",
+  "password": "123456",
+  "cpf": "46181856005",
+  "email": "teste@hotmail.com",
+  "role": "ADMIN ou USER"
+}
+```
+---
 
-![Texto alternativo](doc/img/auth.png)
+**Listar todos usuários**
+
+Metodo **GET**
+
+**URL** http://localhost:8081/users
+
+---
+
+**Listar usuário por ID**
+
+Metodo **GET**
+
+**URL** http://localhost:8081/users/{id}
+
+---
+
+**Autenticar**
+
+Metodo **POST**
+
+**URL** http://localhost:8081/auth/login
+```json
+{
+    "login":"teste",
+    "password":"123456"
+}
+```
 
 **/login**  é necessário informar o Login e a senha cadastrados anteriormente. Caso essas informações estejam corretas será gerato um TOKEN atraves da biblioteca JWT que terá validade de 4 horas e será necessários para utilzar o restante do sistema.
 
+---
+**Validar**
+
+Metodo **GET**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8081/auth/validate
+
 **/validade** é um endpoint criado para ser chamado pelos outros microserviços para realizar a validação do token informado.
+
+---
 
 ### 2. MS-Estoque
 **Para utlizar os serviços presente no ms-estoque já é necessário estar logado no sistema(Possuir um TOKEN valido).**
 
-![Texto alternativo](doc/img/produtos.png)
+**Criar produto**
 
-Nesse microserviço é possível incluir, editar, listar e excluir produtos. Além de ter um endpoint para atualizar o estoque quando um compra for finalizada.
+Metodo **POST**
 
-Existe também uma validação para que apenas usuários ADMIN possam cadastrar novos produtos.
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8082/produto
+```json
+{
+    "id": "1",
+    "nome": "TV 22",
+    "descricao": "TV LG 22 polegadas",
+    "quantidade_estoque": "102",
+    "preco": "435.99"
+}
+```
+---
+**Listar todos produtos**
+
+Metodo **GET**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8082/produto
+
+---
+
+**Listar produto por ID**
+
+Metodo **GET**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8082/produto/{id}
+
+---
+
+**Deletar produto**
+
+Metodo **DELETE**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8082/produto/{id}
+
+---
+
+**Editar produto**
+
+Metodo **PUT**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8082/produto
+
+```json
+{
+    "id": "1",
+    "nome": "TV 22",
+    "descricao": "TV LG 22 polegadas",
+    "quantidade_estoque": "102",
+    "preco": "599.99"
+}
+```
+---
+
+**Atualizar estoque**
+
+Metodo **PUT**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8082/produto/atualizar/estoque/{produtoId}/{quantidade}
+
+**/atualizar/estoque** Endpoint que será chamado pelos outros microserviços para alterar a quantidade de protudos
+
+---
 
 ### 3. MS-Carrinho
+
 **Para utlizar os serviços presente no ms-carrinho já é necessário estar logado no sistema(Possuir um TOKEN valido).**
 
-![Texto alternativo](doc/img/carrinho.png)
+**Criar carrinho**
 
-Nesse microserviço é possível criar um carrinho para o usuário, adicionar itens neles passando o ID do produto e qual a quantidade desejada. É possível também remover itens do carrinho e finalizar sua compra informados os dados de pagamento.
+Metodo **POST**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8083/carrinho?login=
+
+---
+
+**Adicionar produto no carrinho**
+
+Metodo **POST**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8083/carrinho/adicionarproduto/{login}
+
+```json
+{
+    "id":"1",
+    "quantidade":1
+}
+```
+---
+
+**Remover produto no carrinho**
+
+Metodo **DELETE**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8083/carrinho/removerproduto/{login}
+
+```json
+1
+```
+---
+**Listar todos carrinhos**
+
+Metodo **GET**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8083/carrinho
+
+---
+
+**Listar carrinho por ID**
+
+Metodo **GET**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8083/carrinho/{id}
+
+---
 
 ## Como Executar o Projeto
 
