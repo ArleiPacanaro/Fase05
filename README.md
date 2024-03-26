@@ -1,4 +1,4 @@
-# Tech Challenge - Sistema de e-commerce - FIAP Arquitetura de Sistemas em Java - 5º Fase
+<h1 align="center"> <strong> Tech Challenge - Sistema de e-commerce - FIAP Arquitetura de Sistemas em Java - 5º Fase </strong> </h1>
 
 Este sistema de e-commerce foi desenvolvido para permitir que os usuários realizem cadastro, login, gerenciem produtos e mantenham um carrinho de compras, além de simular o processo de pagamento.
 O sistema é baseado no framework Spring Boot, utiliza Spring Security para autenticação e autorização, e é construído seguindo a arquitetura de microserviços, garantindo segurança e escalabilidade.
