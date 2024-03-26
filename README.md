@@ -234,6 +234,28 @@ Headers **Authorization Bearer {token}**
 
 ---
 
+**Pagamento do carrinho**
+Após esta ação o status fica false e o carrinho fechado, desta forma abrindo um novo carrinho pelo login, este não será selecionado para adcionar, remover produtos e pagar e não poderá mais sofrer ajustes pelo controle do id do carrinho
+
+Metodo **POST**
+
+Headers **Authorization Bearer {token}**
+
+**URL** http://localhost:8083/carrinho/pagamento/efetuar/{login}
+
+```json
+{
+  "cartao": "1234567890123456",
+  "validade": "12/26",
+  "bandeira": "VISA",
+  "qtdParcelas": 3,
+  "nome":"Joao Silva",
+  "cvv":"254"
+
+}
+```
+---
+
 <h2 align="center"> Como Executar o Projeto</strong> </h2>
 
 Siga as etapas abaixo para executar o projeto em sua máquina local:
