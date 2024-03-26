@@ -1,6 +1,6 @@
 # Tech Challenge - Sistema de e-commerce - FIAP Arquitetura de Sistemas em Java - 5º Fase
 
-Este sistema de e-commerce foi desenvolvido para permitir que os usuários realizem cadastro, login, gerenciem itens e mantenham um carrinho de compras, além de simular o processo de pagamento.
+Este sistema de e-commerce foi desenvolvido para permitir que os usuários realizem cadastro, login, gerenciem produtos e mantenham um carrinho de compras, além de simular o processo de pagamento.
 O sistema é baseado no framework Spring Boot, utiliza Spring Security para autenticação e autorização, e é construído seguindo a arquitetura de microserviços, garantindo segurança e escalabilidade.
 
 ## Tecnologias Adotadas
@@ -249,7 +249,7 @@ Certifique-se de ter o Docker instalado em sua máquina. Navegue até o diretór
 
 4.**Inicie os Serviços:**
 
-A partir da raiz do projeto altere para a pasta *ms-seguranca* e execute o seguinte comando **mvn spring-boot:run** após navegue para a pasta *ms-estoque* e execute novamente o comando **mvn spring-boot:run** após navegue para a pasta *ms-carrinho* e execute o comando **mvn spring-boot:run** pela ultima vez.
+A partir da raiz do projeto altere para a pasta *ms-seguranca* e execute o seguinte comando **mvn spring-boot:run** após abra outra linha de comando e navegue para a pasta *ms-estoque* e execute novamente o comando **mvn spring-boot:run** após abra outra linha de comando e navegue para a pasta *ms-carrinho* e execute o comando **mvn spring-boot:run** pela ultima vez.
 
 Após seguir essas etapas, o sistema estará em execução em sua máquina local e você poderá acessá-lo através dos endpoints especificados na documentação. Certifique-se de verificar se todos os serviços estão em execução corretamente antes de utilizar o sistema.
 
@@ -257,10 +257,10 @@ Após seguir essas etapas, o sistema estará em execução em sua máquina local
 
 Existe a pasta com as Collections do Postman caso não queria seguir os exemplos acima.
 
-### Integrantes do Grupo – Grupo 29:
+### Integrantes do Grupo – Grupo 39-29:
 
-- Igor Pereira Rocha Oliveira - RM 349895
 - Arlei Pacanaro Lepiani - RM 350113
+- Igor Pereira Rocha Oliveira - RM 349895
 - William Kaminski - RM 430025
 - Diogo Henrique Valente - RM 348497
 - Matheus Sena - RM 348505
