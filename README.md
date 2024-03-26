@@ -245,27 +245,18 @@ Certifique-se de ter o Docker instalado em sua máquina. Navegue até o diretór
 
 4.**Inicie os Serviços:**
 
-De um build em todos os microserviços necessários para o funcionamento do sistema, são eles ms-carrinho, ms-estoque e ms-seguranca
+A partir da raiz do projeto altere para a pasta *ms-seguranca* e execute o seguinte comando **mvn spring-boot:run** após navegue para a pasta *ms-estoque* e execute novamente o comando **mvn spring-boot:run** após navegue para a pasta *ms-carrinho* e execute o comando **mvn spring-boot:run** pela ultima vez.
 
 Após seguir essas etapas, o sistema estará em execução em sua máquina local e você poderá acessá-lo através dos endpoints especificados na documentação. Certifique-se de verificar se todos os serviços estão em execução corretamente antes de utilizar o sistema.
 
 ## Testes
 
-Para testar a aplicação é possível acessar os swaggers pelas url: 
-**ms-segurnca** http://localhost:8081/swagger-ui/index.html 
-
-**ms-estoque**  http://localhost:8082/swagger-ui/index.html
-
-**ms-carrinho**  http://localhost:8083/swagger-ui/index.html
-
-existe também uma pasta com as Collections do Postman e outra pasta com os CURLs
-
-## Informações Adicionais
+Existe uma pasta com as Collections do Postman caso não queria seguir os exemplos acima.
 
 ### Integrantes do Grupo – Grupo 29:
 
-- William Kaminski - RM 430025
-- Diogo Henrique Valente - RM 348497
 - Igor Pereira Rocha Oliveira - RM 349895
 - Arlei Pacanaro Lepiani - RM 350113
+- William Kaminski - RM 430025
+- Diogo Henrique Valente - RM 348497
 - Matheus Sena - RM 348505
