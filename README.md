@@ -257,7 +257,7 @@ Headers **Authorization Bearer {token}**
 ```
 ---
 
-Exemplo de como fica o reterno do carrinho , após pagamento.
+Exemplo de como fica o retorno do carrinho , após pagamento.
 
 ```json
 {
