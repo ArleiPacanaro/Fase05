@@ -3,7 +3,7 @@
 Este sistema de e-commerce foi desenvolvido para permitir que os usuários realizem cadastro, login, gerenciem produtos e mantenham um carrinho de compras, além de simular o processo de pagamento.
 O sistema é baseado no framework Spring Boot, utiliza Spring Security para autenticação e autorização, e é construído seguindo a arquitetura de microserviços, garantindo segurança e escalabilidade.
 
-## Tecnologias Adotadas
+<h2 align="center">  Tecnologias Adotadas </strong> </h2>
 
 - **Java 17**: Versão da linguagem Java de suporte de longo prazo (LTS)
 - **Spring**: Framework utilizado para a construção de aplicativos Java que agiliza nosso desenvolvimento com servidor ja embarcado da aplicação e estruturas\bibliotecas já prontas em especial para o desenvolvimento WEB com injeção e inversão de dependências.
@@ -18,7 +18,7 @@ O sistema é baseado no framework Spring Boot, utiliza Spring Security para aute
 - **CheckStyle** é um analisador estático de código para checar se o código fonte está de acordo com as regras de codificação, este software nos ajudou a atendermos os requisitos da utilização de boas práticas em nosso código.
 - **JUnit**: É um framework open-source para construção de testes automatizados em Java, essencial para o desenvolvimento utilizando os conceitos de TDD, em conjunto com o Mockito que cria Fakes para nossos testes unitários, utilizamos em algumas de  nossas classes de testes, apesar de não estar no requisito deste projeto, mas sabemos da importãncia sempre citados pelos professores.
   
-## Arquitetura de Microserviços
+<h2 align="center"> Arquitetura de Microserviços</strong> </h2>
 
 A arquitetura de microsserviços refere-se a um estilo de arquitetura para o desenvolvimento de sistemas. Os microsserviços permitem que um aplicativo grande seja separado em partes independentes menores, com cada parte tendo sua própria responsabilidade, indo de encontro aos conceitos do Solid (especial o S) e permitindo as equipes de desenvolvimento poderem criar e atualizar novos componentes para atender às mudanças nas necessidades empresariais sem interromper a aplicação como um todo.
 
@@ -27,7 +27,7 @@ A arquitetura de microsserviços refere-se a um estilo de arquitetura para o des
 Cada microserviço interage com seu próprio banco de dados para garantir a independência e a eficiência na gestão dos dados.
 Em nosso projeto temos, todos os microsserviços chamando o de segurança para validação do Token e recuperação dos dados de roles dos usuários, além do microserviço de carrinho que chama o de estoque para consulta de disponibilidade de produtos, recuperar detalhes de produtos e atualizar o estoque seja no adicionar quanto no remover produtos.
 
-### Microserviços do Sistema
+<h2 align="center">Microserviços do Sistema</strong> </h2>
 
 ### 1. MS-Seguranca
 
@@ -234,7 +234,7 @@ Headers **Authorization Bearer {token}**
 
 ---
 
-## Como Executar o Projeto
+<h2 align="center"> Como Executar o Projeto</strong> </h2>
 
 Siga as etapas abaixo para executar o projeto em sua máquina local:
 
@@ -253,11 +253,11 @@ A partir da raiz do projeto altere para a pasta *ms-seguranca* e execute o segui
 
 Após seguir essas etapas, o sistema estará em execução em sua máquina local e você poderá acessá-lo através dos endpoints especificados na documentação. Certifique-se de verificar se todos os serviços estão em execução corretamente antes de utilizar o sistema.
 
-## Testes
+<h2 align="center"> Testes</strong> </h2>
 
 Existe a pasta com as Collections do Postman caso não queria seguir os exemplos acima.
 
-### Integrantes do Grupo – Grupo 39-29:
+<h2 align="center"> Integrantes do Grupo – Grupo 39-29 </strong> </h2>
 
 - Arlei Pacanaro Lepiani - RM 350113
 - Igor Pereira Rocha Oliveira - RM 349895
